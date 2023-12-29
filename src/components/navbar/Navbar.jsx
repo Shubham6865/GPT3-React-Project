@@ -1,30 +1,25 @@
-import React from 'react';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-import './navbar.css';
-import logo from '../../assets/logo.svg';
+import React, { useState } from 'react'
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
+import './navbar.css'
+import logo from '../../assets/logo.svg'
 
 
-const Menu = ({ closeMenu }) => (
-  <div className='gpt3__navbar-menu_container-links' onClick={closeMenu}>
-    <p><a href="#home">Home </a></p>
-    <p><a href="#wgpt3">What is GPT3?</a></p>
-    <p><a href="#possibility">Open AI</a></p>
-    <p><a href="#features">Case Studies</a></p>
-    <p><a href="#blog">Library</a></p>
-  </div>
-);
+
+
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = React.useState(false);
- 
 
-  const toggleMenuHandler = () => {
-    setToggleMenu(!toggleMenu);
-  };
+  const Menu = () => (
+    <>
+      <p><a href="#home" onClick={() => setToggleMenu(false)} >Home</a></p>
+      <p><a href="#wgpt3" onClick={() => setToggleMenu(false)} >What is GPT3?</a></p>
+      <p><a href="#possibility" onClick={() => setToggleMenu(false)} >Open AI</a></p>
+      <p><a href="#features"onClick={() => setToggleMenu(false)} >Case Studies</a></p>
+      <p><a href="#blog"onClick={() => setToggleMenu(false)} >Library</a></p>
+    </>
+  )
 
-  const closeMenuHandler = () => {
-    setToggleMenu(false);
-  };
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <div className="gpt3__navbar">
@@ -33,7 +28,7 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className='gpt3__navbar-links_container'>
-          <Menu closeMenu={closeMenuHandler} />
+          <Menu />
         </div>
       </div>
       <div className='gpt3__navbar-sign' >
@@ -42,21 +37,23 @@ const Navbar = () => {
       </div>
       <div className='gpt3__navbar-menu'>
         {toggleMenu
-          ? <RiCloseLine color='#fff' size={27} onClick={toggleMenuHandler} />
-          : <RiMenu3Line color='#fff' size={27} onClick={toggleMenuHandler} />
+          ? <RiCloseLine color='#fff' size={27} onClick={() => setToggleMenu(false)} />
+          : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMenu(true)} />
         }
         {toggleMenu && (
           <div className='gpt3__navbar-menu_container scale-up-center'>
-            <Menu closeMenu={closeMenuHandler} />
-            <div className='gpt3__navbar-menu_container-links-sign'>
-              <p>Sign in</p>
-              <button className='gpt3__navbar-sign-up' type='button'>Sign up</button>
+            <div className='gpt3__navbar-menu_container-links'>
+              <Menu />
+              <div className='gpt3__navbar-menu_container-links-sign'>
+                <p>Sign in</p>
+                <button className='gpt3__navbar-sign-up' type='button'>Sign up</button>
+              </div>
             </div>
           </div>
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
