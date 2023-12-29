@@ -12,12 +12,14 @@ function App() {
       <Header/>
     </div>
     <Brand/>
+
+
     <WhatGPT3/>
-    <Features/>
-    <Possibility/>
-    <CTA/>
-    <Blog/>
-    <Footer/>
+      <Features/>
+     <Possibility/>
+     <CTA/>
+     <Blog/>
+     <Footer/>
 
     </div>
   );

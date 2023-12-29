@@ -2,9 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 6rem;
+    padding: 0.5rem 6rem;
     position: fixed;
     width: 100%;
+    z-index: 10;
+    
+    backdrop-filter: blur(10px);
+    
 }
 
 .gpt3__navbar-links {
@@ -12,6 +16,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
 }
 
 .gpt3__navbar-links_logo {
