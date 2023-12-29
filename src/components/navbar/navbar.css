@@ -5,10 +5,12 @@
     padding: 0.5rem 6rem;
     position: fixed;
     width: 100%;
+
     z-index: 10;
     
     backdrop-filter: blur(10px);
     
+
 }
 
 .gpt3__navbar-links {

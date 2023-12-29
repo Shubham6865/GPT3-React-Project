@@ -1,7 +1,12 @@
 .gpt3__whatgpt3 {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     
+=======
+    z-index:0;
+
+>>>>>>> ed249c94252ed6d0a80d5ee79857ca7811d7844b
     padding: 2rem;
     background: var(--color-footer);
 
